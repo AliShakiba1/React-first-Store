@@ -26,7 +26,7 @@ const Controls = props => {
         )
       })}
 
-      <button className='border-btn'>Order</button>
+      <button className='border-btn' onClick={props.show}>Order</button>
     </div>
   )
 }
