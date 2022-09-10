@@ -1,5 +1,7 @@
 import React from 'react'
 import Wrapper from '../../hoc/Wrapper'
+import Btn from '../UI/Button/button'
+import './order.css'
 
 const Order = props => {
   const summery = Object.keys(props.products).map(item => {
@@ -12,9 +14,14 @@ const Order = props => {
   return (
     <Wrapper>
       <h3>Order</h3>
-      <ul>
-        {summery}
-      </ul>
+      <ul>{summery}</ul>
+      <p>Continue ? </p>
+      <Btn btnType="success" click={props.yes}>
+        Yes
+      </Btn>
+      <Btn btnType="danger" click={props.no}>
+        no
+      </Btn>
     </Wrapper>
   )
 }

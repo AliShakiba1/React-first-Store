@@ -1,19 +1,21 @@
-.btn-yes {
+
+
+.btn {
+  background: transparent;
+  font: inherit;
   color: #fff;
+  margin: 10px;
   border: none;
   outline: none;
   padding: 10px;
   border-radius: 5px;
-  margin-right: 10px;
-  background: rgb(11, 185, 78);
 }
 
-.btn-no {
-  color: #fff;
-  border: none;
-  outline: none;
-  padding: 10px;
-  border-radius: 5px;
-  margin-left: 10px;
+.success {
+  background: rgb(11, 185, 78);
+  color: fff;
+}
+
+.danger {
   background: rgb(187, 15, 15);
 }
