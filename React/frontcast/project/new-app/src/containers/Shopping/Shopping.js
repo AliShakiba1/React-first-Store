@@ -62,7 +62,11 @@ class Shopping extends React.Component {
           showOrNot={this.state.purchased}
           modalClose={this.modalCloseHandler}
         >
-          <Order products={this.state.products} no={this.modalCloseHandler} />
+          <Order
+            products={this.state.products}
+            no={this.modalCloseHandler}
+            yes={() => console.log(' purchased contenue Hander ')}
+          />
         </Modal>
         <Control
           addProduct={this.addProductHandler}
