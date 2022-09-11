@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from './components/Layout/Layout'
+
 import Shopping from './containers/Shopping/Shopping'
 
 class App extends React.Component {
@@ -7,7 +8,7 @@ class App extends React.Component {
     return (
       <div className="tes">
         <Layout>
-          <Shopping/>
+          <Shopping />
         </Layout>
       </div>
     )

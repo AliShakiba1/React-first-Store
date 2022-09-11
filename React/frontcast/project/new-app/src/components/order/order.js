@@ -15,6 +15,7 @@ const Order = props => {
     <Wrapper>
       <h3>Order</h3>
       <ul>{summery}</ul>
+      <p>Total Price : {props.total}</p>
       <p>Continue ? </p>
       <Btn btnType="success" click={props.yes}>
         Yes

@@ -65,6 +65,7 @@ class Shopping extends React.Component {
           <Order
             products={this.state.products}
             no={this.modalCloseHandler}
+            total={this.state.totalPrice}
             yes={() => console.log(' purchased contenue Hander ')}
           />
         </Modal>
