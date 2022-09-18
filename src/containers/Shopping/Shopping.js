@@ -55,7 +55,59 @@ class Shopping extends React.Component {
     this.setState({ purchased: false })
   }
 
+<<<<<<< HEAD
   render() {
+=======
+  purchasedContinueHandler = () => {
+    this.props.history.push('/checkout')
+    const orders = {
+      products: this.state.products,
+      totalPrice: this.state.totalPrice,
+      customer: {
+        name: 'ali',
+      },
+    }
+
+    this.setState({ loading: true })
+
+    axios
+      .post('/orders.json', orders)
+      .then(response => {
+        this.setState({ loading: false, purchased: false })
+        console.log(response)
+      })
+      .catch(err => console.log(err))
+  }
+
+  render() {
+    let order = null
+
+    let control = <Loader>Loading...</Loader>
+
+    if (this.state.products) {
+      control = (
+        <Control
+          addProduct={this.addProductHandler}
+          removeProduct={type => this.removeProductHandler(type)}
+          total={this.state.totalPrice}
+          show={this.purchasedHandler}
+        />
+      )
+      order = (
+        <Order
+          products={this.state.products}
+          no={this.modalCloseHandler}
+          total={this.state.totalPrice}
+          yes={this.purchasedContinueHandler}
+        />
+      )
+    }
+
+    if (this.state.loading) {
+      order = <Loader>Loading...</Loader>
+    }
+
+>>>>>>> 3cf3cec... adding acount page
     return (
       <Wrapper>
         <Modal
@@ -65,6 +117,7 @@ class Shopping extends React.Component {
           <Order
             products={this.state.products}
             no={this.modalCloseHandler}
+            total={this.state.totalPrice}
             yes={() => console.log(' purchased contenue Hander ')}
           />
         </Modal>
