@@ -13,6 +13,10 @@ class App extends React.Component {
             <Route path="/account" component={Account} />
             <Route path="/checkout" exact component={Checkout} />
             <Route path="/" exact component={Shopping} />
+            <Route
+              exact
+              render={() => <h1 style={{ textAlign: 'center' }}>Not Found</h1>}
+            />
           </Switch>
         </Layout>
       </div>
